@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Дмитрий Агеев](https://up.htmlacademy.ru/react/10/user/797803).
-* Наставник: `Неизвестно`.
+* Наставник: [Даниил Крохмаль](https://htmlacademy.ru/profile/tchernyavskyd).
 
 ---
 
