@@ -1,8 +1,14 @@
 import PageMain from '../../pages/page-main/page-main';
 
-function App(): JSX.Element {
+type AppProps = {
+  offersCount: number;
+}
+
+function App({offersCount}: AppProps): JSX.Element {
   return (
-    <PageMain/>
+    <PageMain
+      offersCount={offersCount}
+    />
   );
 }
 
