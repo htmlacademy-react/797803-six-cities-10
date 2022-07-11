@@ -1,5 +1,9 @@
+import PageMain from '../../pages/page-main/page-main';
+
 function App(): JSX.Element {
-  return <p>Hello, world!</p>;
+  return (
+    <PageMain/>
+  );
 }
 
 export default App;
