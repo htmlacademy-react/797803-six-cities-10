@@ -119,7 +119,7 @@ function Main ({offersCount}: PageProps): JSX.Element {
               </form>
               <div className="cities__places-list places__list tabs__content">
                 {
-                  Array.from({ length: PLACE_CARDS_COUNT}, (v, k) => k).map((item) => <li key={item}>{<PlaceCard/>}</li>)
+                  Array.from(Array(PLACE_CARDS_COUNT).keys()).map((item) => <PlaceCard key={item}/>)
                 }
               </div>
             </section>
