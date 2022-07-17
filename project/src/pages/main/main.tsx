@@ -1,12 +1,12 @@
-import PlaceCard from '../../components/place-card/place-card';
-
-const PLACE_CARDS_COUNT = 5;
+import PlaceCardList from '../../components/place-card-list/place-card-list';
+import {Offer} from '../../types/offer';
 
 type PageProps = {
+    offers: Offer[];
     offersCount: number;
   }
 
-function Main ({offersCount}: PageProps): JSX.Element {
+function Main ({offers, offersCount}: PageProps): JSX.Element {
 
   return (
     <div className="page page--gray page--main">
@@ -117,11 +117,7 @@ function Main ({offersCount}: PageProps): JSX.Element {
                   </li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                {
-                  Array.from(Array(PLACE_CARDS_COUNT).keys()).map((item) => <PlaceCard key={item}/>)
-                }
-              </div>
+              <PlaceCardList offers = {offers}/>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map" />
