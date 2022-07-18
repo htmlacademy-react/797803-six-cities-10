@@ -1,4 +1,10 @@
-function Favorites (): JSX.Element {
+import {Offer} from '../../types/offer';
+
+type FavoritesProps = {
+  offers: Offer[];
+}
+
+function Favorites ({offers}: FavoritesProps): JSX.Element {
 
   return (
     <div className="page">

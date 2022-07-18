@@ -1,12 +1,12 @@
-import PlaceCardList from '../../components/place-card-list/place-card-list';
+import CitiesCardList from '../../components/cities-card-list/cities-card-list';
 import {Offer} from '../../types/offer';
 
-type PageProps = {
+type MainProps = {
     offers: Offer[];
     offersCount: number;
   }
 
-function Main ({offers, offersCount}: PageProps): JSX.Element {
+function Main ({offers, offersCount}: MainProps): JSX.Element {
 
   return (
     <div className="page page--gray page--main">
@@ -117,7 +117,7 @@ function Main ({offers, offersCount}: PageProps): JSX.Element {
                   </li>
                 </ul>
               </form>
-              <PlaceCardList offers = {offers}/>
+              <CitiesCardList offers = {offers}/>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map" />

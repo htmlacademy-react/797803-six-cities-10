@@ -2,21 +2,22 @@ import {RATING_WIDTH_FACTOR} from '../../const';
 import {Offer} from '../../types/offer';
 
 type PlaceCardProps = {
+  classComponent: string;
   offer: Offer;
   onMousePlaceCard: (currentIdPlaceCard: number) => void;
 }
 
-function PlaceCard ({offer, onMousePlaceCard}:PlaceCardProps): JSX.Element {
+function PlaceCard ({classComponent, offer, onMousePlaceCard}:PlaceCardProps): JSX.Element {
 
   const {id, isPremium, previewImage, price, rating, title, type} = offer;
 
   return (
-    <article className="cities__card place-card"
+    <article className={`${classComponent}__card place-card`}
       onMouseEnter={() => {
         onMousePlaceCard(id);}}
     >
       {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${classComponent}__image-wrapper place-card__image-wrapper`}>
         <a href="/">
           <img
             className="place-card__image"
