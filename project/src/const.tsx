@@ -25,6 +25,29 @@ export const CITIES = [
   'Dusseldorf',
 ];
 
+export const REVIEW_FORM_STATUS = [
+  {
+    startNumber: 5,
+    title: 'perfect'
+  },
+  {
+    startNumber: 4,
+    title: 'good'
+  },
+  {
+    startNumber: 3,
+    title: 'not bad'
+  },
+  {
+    startNumber: 2,
+    title: 'badly'
+  },
+  {
+    startNumber: 1,
+    title: 'terribly'
+  },
+];
+
 export const OFFERS_COUNT = 312;
 
 export const PLACE_CARDS_COUNT = 4;
