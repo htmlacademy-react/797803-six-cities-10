@@ -3,11 +3,11 @@ import PlaceCard from '../place-card/place-card';
 import {PLACE_CARDS_COUNT, START_PLACE_CARD_ID, PlaceCardClass} from '../../const';
 import {Offer} from '../../types/offer';
 
-type PlaceCardListProps = {
+type CitiesCardListProps = {
     offers: Offer[];
   }
 
-function CitiesCardList ({offers}:PlaceCardListProps): JSX.Element {
+function CitiesCardList ({offers}:CitiesCardListProps): JSX.Element {
   const [, setIdPlaceCard] = useState(START_PLACE_CARD_ID);
 
   return (

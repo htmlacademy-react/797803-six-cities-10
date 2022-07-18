@@ -16,6 +16,15 @@ export enum PlaceCardClass {
   Favorites = 'favorites',
 }
 
+export const CITIES = [
+  'Paris',
+  'Cologne',
+  'Brussels',
+  'Amsterdam',
+  'Hamburg',
+  'Dusseldorf',
+];
+
 export const OFFERS_COUNT = 312;
 
 export const PLACE_CARDS_COUNT = 4;

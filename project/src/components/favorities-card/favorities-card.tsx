@@ -1,42 +1,38 @@
 import {RATING_WIDTH_FACTOR} from '../../const';
 import {Offer} from '../../types/offer';
 
-type PlaceCardProps = {
-  classComponent: string;
-  offer: Offer;
-  onMousePlaceCard: (currentIdPlaceCard: number) => void;
+type FavoritiesCardProps = {
+    offer: Offer;
 }
 
-function PlaceCard ({classComponent, offer, onMousePlaceCard}:PlaceCardProps): JSX.Element {
+function FavoritiesCard ({offer}:FavoritiesCardProps):JSX.Element {
 
-  const {id, isPremium, previewImage, price, rating, title, type} = offer;
-  const foo = onMousePlaceCard;
+  const {isPremium, previewImage, price, rating, title, type} = offer;
 
   return (
-    <article className={`${classComponent}__card place-card`}
-      onMouseEnter={() => {
-        foo(id);}}
-    >
+    <article className="favorites__card place-card">
       {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
-      <div className={`${classComponent}__image-wrapper place-card__image-wrapper`}>
+      <div className="favorites__image-wrapper place-card__image-wrapper">
         <a href="/">
           <img
             className="place-card__image"
             src={previewImage}
-            alt="Place figure"
-            width={260}
-            height={200}
+            alt="Place place"
+            width={150}
+            height={110}
           />
         </a>
       </div>
-      <div className="place-card__info">
+      <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">{price}</b>
-            <span className="place-card__price-text">/&nbsp;night</span>
+            <span className="place-card__price-text">
+            /&nbsp;night
+            </span>
           </div>
           <button
-            className="place-card__bookmark-button button"
+            className="place-card__bookmark-button place-card__bookmark-button--active button"
             type="button"
           >
             <svg
@@ -46,19 +42,17 @@ function PlaceCard ({classComponent, offer, onMousePlaceCard}:PlaceCardProps): J
             >
               <use xlinkHref="#icon-bookmark" />
             </svg>
-            <span className="visually-hidden">To bookmarks</span>
+            <span className="visually-hidden">In bookmarks</span>
           </button>
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: rating * RATING_WIDTH_FACTOR}} />
+            <span style={{ width: rating * RATING_WIDTH_FACTOR }} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">
-            {title}
-          </a>
+          <a href="/">{title}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -66,4 +60,4 @@ function PlaceCard ({classComponent, offer, onMousePlaceCard}:PlaceCardProps): J
   );
 }
 
-export default PlaceCard;
+export default FavoritiesCard;
