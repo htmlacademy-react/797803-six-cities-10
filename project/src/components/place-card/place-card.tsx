@@ -1,5 +1,6 @@
 import {RATING_WIDTH_FACTOR} from '../../const';
 import {Offer} from '../../types/offer';
+import {Link} from 'react-router-dom';
 
 type PlaceCardProps = {
   classComponent: string;
@@ -10,12 +11,13 @@ type PlaceCardProps = {
 function PlaceCard ({classComponent, offer, onMousePlaceCard}:PlaceCardProps): JSX.Element {
 
   const {id, isPremium, previewImage, price, rating, title, type} = offer;
-  const foo = onMousePlaceCard;
+  const setIdPlaceCard = onMousePlaceCard;
+  const placeCardId = `/offer/:${id}`;
 
   return (
     <article className={`${classComponent}__card place-card`}
       onMouseEnter={() => {
-        foo(id);}}
+        setIdPlaceCard(id);}}
     >
       {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className={`${classComponent}__image-wrapper place-card__image-wrapper`}>
@@ -56,9 +58,7 @@ function PlaceCard ({classComponent, offer, onMousePlaceCard}:PlaceCardProps): J
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">
-            {title}
-          </a>
+          <Link to={placeCardId}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
