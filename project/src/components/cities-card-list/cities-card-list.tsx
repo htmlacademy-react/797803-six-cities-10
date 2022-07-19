@@ -17,7 +17,7 @@ function CitiesCardList ({offers}:CitiesCardListProps): JSX.Element {
           .keys())
           .map((item) => (
             <PlaceCard
-              key = {`place-card-${offers[item].id}`}
+              key = {offers[item].id}
               classComponent = {PlaceCardClass.Cities}
               offer = {offers[item]}
               onMouseEnterPlaceCard = {setIdPlaceCard}
