@@ -1,5 +1,5 @@
-import FavoritesCard from '../favorites-card/favorities-card';
-import {CITIES} from '../../const';
+import PlaceCard from '../place-card/place-card';
+import {CITIES, PlaceCardClass} from '../../const';
 import {Offer} from '../../types/offer';
 
 type FavoritesCardListProps = {
@@ -20,7 +20,11 @@ function FavoritesCardList({offers}: FavoritesCardListProps): JSX.Element {
           </div>
           <div className="favorites__places">
             {offers.map((offer) => (
-              <FavoritesCard key = {offer.id} offer = {offer}/>
+              <PlaceCard
+                key = {offer.id}
+                classComponent = {PlaceCardClass.Favorites}
+                offer = {offer}
+              />
             ))}
           </div>
         </li>

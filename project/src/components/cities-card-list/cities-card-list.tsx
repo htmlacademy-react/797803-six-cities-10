@@ -15,7 +15,13 @@ function CitiesCardList ({offers}:CitiesCardListProps): JSX.Element {
       {
         Array.from(Array(PLACE_CARDS_COUNT)
           .keys())
-          .map((item) => (<PlaceCard key = {`place-card-${offers[item].id}`} classComponent = {PlaceCardClass.Cities} offer = {offers[item]} handlePlaceCardMouseEnter = {setIdPlaceCard}/>) )
+          .map((item) => (
+            <PlaceCard
+              key = {`place-card-${offers[item].id}`}
+              classComponent = {PlaceCardClass.Cities}
+              offer = {offers[item]}
+              handlePlaceCardMouseEnter = {setIdPlaceCard}
+            />) )
       }
     </div>
   );

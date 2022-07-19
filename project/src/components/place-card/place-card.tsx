@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 type PlaceCardProps = {
   classComponent: string;
   offer: Offer;
-  handlePlaceCardMouseEnter: (id: number) => void;
+  handlePlaceCardMouseEnter?: (id: number) => void;
 }
 
 function PlaceCard ({classComponent, offer, handlePlaceCardMouseEnter}:PlaceCardProps): JSX.Element {
@@ -15,8 +15,7 @@ function PlaceCard ({classComponent, offer, handlePlaceCardMouseEnter}:PlaceCard
 
   return (
     <article className={`${classComponent}__card place-card`}
-      onMouseEnter={() => {
-        handlePlaceCardMouseEnter(id);}}
+      onMouseEnter = {handlePlaceCardMouseEnter ? () => handlePlaceCardMouseEnter(id) : undefined}
     >
       {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className={`${classComponent}__image-wrapper place-card__image-wrapper`}>
