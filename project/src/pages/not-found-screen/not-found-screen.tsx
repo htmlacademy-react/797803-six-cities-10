@@ -1,8 +1,10 @@
+import {Link} from 'react-router-dom';
+
 function NotFoundScreen(): JSX.Element {
   return (
-    <div className="page page--gray page--main">
-        404 Not Found
-    </div>
+    <Link to="/">
+      <div className="page page--gray page--main">404. Страница Отсутсвует. На главную страницу</div>
+    </Link>
   );
 }
 
