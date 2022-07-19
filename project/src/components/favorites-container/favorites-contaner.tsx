@@ -1,4 +1,4 @@
-import FavoritiesCardList from '../../components/favorites-card-list/favorites-card-list';
+import FavoritesCardList from '../favorites-card-list/favorites-card-list';
 import {Offer} from '../../types/offer';
 
 type FavoritesContainerProps = {
@@ -10,7 +10,7 @@ function FavoritesContainer ({offers}: FavoritesContainerProps): JSX.Element {
   return (
     <section className="favorites">
       <h1 className="favorites__title">Saved listing</h1>
-      <FavoritiesCardList offers={offers}/>
+      <FavoritesCardList offers={offers}/>
     </section>
   );
 }

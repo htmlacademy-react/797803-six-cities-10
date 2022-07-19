@@ -1,12 +1,12 @@
-import FavoritiesCard from '../favorities-card/favorities-card';
+import FavoritesCard from '../favorites-card/favorities-card';
 import {CITIES} from '../../const';
 import {Offer} from '../../types/offer';
 
-type FavoritiesCardListProps = {
+type FavoritesCardListProps = {
     offers: Offer[];
   }
 
-function FavoritiesCardList({offers}: FavoritiesCardListProps): JSX.Element {
+function FavoritesCardList({offers}: FavoritesCardListProps): JSX.Element {
   return (
     <ul className="favorites__list">
       {CITIES.map((city) => (
@@ -20,7 +20,7 @@ function FavoritiesCardList({offers}: FavoritiesCardListProps): JSX.Element {
           </div>
           <div className="favorites__places">
             {offers.map((offer) => (
-              <FavoritiesCard key = {offer.id} offer = {offer}/>
+              <FavoritesCard key = {offer.id} offer = {offer}/>
             ))}
           </div>
         </li>
@@ -29,4 +29,4 @@ function FavoritiesCardList({offers}: FavoritiesCardListProps): JSX.Element {
   );
 }
 
-export default FavoritiesCardList;
+export default FavoritesCardList;

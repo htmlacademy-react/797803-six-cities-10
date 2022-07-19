@@ -1,11 +1,11 @@
 import {RATING_WIDTH_FACTOR} from '../../const';
 import {Offer} from '../../types/offer';
 
-type FavoritiesCardProps = {
+type FavoritesCardProps = {
     offer: Offer;
 }
 
-function FavoritiesCard ({offer}:FavoritiesCardProps):JSX.Element {
+function FavoritesCard ({offer}:FavoritesCardProps):JSX.Element {
 
   const {isPremium, previewImage, price, rating, title, type} = offer;
 
@@ -60,4 +60,4 @@ function FavoritiesCard ({offer}:FavoritiesCardProps):JSX.Element {
   );
 }
 
-export default FavoritiesCard;
+export default FavoritesCard;

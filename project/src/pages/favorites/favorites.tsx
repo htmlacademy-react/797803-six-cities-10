@@ -1,6 +1,6 @@
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import FavoritesContainer from '../../components/favorites-container/favorities-contaner';
+import FavoritesContainer from '../favorites/favorites';
 import {Offer} from '../../types/offer';
 
 type FavoritesProps = {
