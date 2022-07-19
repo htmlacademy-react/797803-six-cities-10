@@ -1,21 +1,21 @@
-import {RATING_WIDTH_FACTOR} from '../../const';
+import {RATING_WIDTH_FACTOR, PlaceCardClass} from '../../const';
 import {Offer} from '../../types/offer';
 import {Link} from 'react-router-dom';
 
 type PlaceCardProps = {
-  classComponent: string;
+  classComponent: PlaceCardClass;
   offer: Offer;
-  handlePlaceCardMouseEnter?: (id: number) => void;
+  onMouseEnterPlaceCard?: (id: number) => void;
 }
 
-function PlaceCard ({classComponent, offer, handlePlaceCardMouseEnter}:PlaceCardProps): JSX.Element {
+function PlaceCard ({classComponent, offer, onMouseEnterPlaceCard}:PlaceCardProps): JSX.Element {
 
   const {id, isPremium, previewImage, price, rating, title, type} = offer;
   const placeCardId = `/offer/:${id}`;
 
   return (
     <article className={`${classComponent}__card place-card`}
-      onMouseEnter = {handlePlaceCardMouseEnter ? () => handlePlaceCardMouseEnter(id) : undefined}
+      onMouseEnter = {onMouseEnterPlaceCard ? () => onMouseEnterPlaceCard(id) : undefined}
     >
       {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className={`${classComponent}__image-wrapper place-card__image-wrapper`}>

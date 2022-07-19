@@ -20,7 +20,7 @@ function CitiesCardList ({offers}:CitiesCardListProps): JSX.Element {
               key = {`place-card-${offers[item].id}`}
               classComponent = {PlaceCardClass.Cities}
               offer = {offers[item]}
-              handlePlaceCardMouseEnter = {setIdPlaceCard}
+              onMouseEnterPlaceCard = {setIdPlaceCard}
             />) )
       }
     </div>
