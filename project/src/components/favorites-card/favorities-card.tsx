@@ -1,4 +1,4 @@
-import {RATING_WIDTH_FACTOR} from '../../const';
+import {RATING_WIDTH_FILM_FACTOR} from '../../const';
 import {Offer} from '../../types/offer';
 
 type FavoritesCardProps = {
@@ -47,7 +47,7 @@ function FavoritesCard ({offer}:FavoritesCardProps):JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: rating * RATING_WIDTH_FACTOR }} />
+            <span style={{ width: rating * RATING_WIDTH_FILM_FACTOR }} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>

@@ -39,7 +39,7 @@ function App({offers, offersCount, reviews}: AppProps): JSX.Element {
         />
         <Route
           path={AppRoute.Property}
-          element={<Property />}
+          element={<Property reviews = {reviews}/>}
         />
         <Route
           path="*"

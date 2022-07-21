@@ -1,4 +1,4 @@
-import {RATING_WIDTH_FACTOR, PlaceCardClass} from '../../const';
+import {RATING_WIDTH_FILM_FACTOR, PlaceCardClass} from '../../const';
 import {Offer} from '../../types/offer';
 import {Link} from 'react-router-dom';
 
@@ -51,7 +51,7 @@ function PlaceCard ({classComponent, offer, onMouseEnterPlaceCard}:PlaceCardProp
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: rating * RATING_WIDTH_FACTOR}} />
+            <span style={{width: rating * RATING_WIDTH_FILM_FACTOR}} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
