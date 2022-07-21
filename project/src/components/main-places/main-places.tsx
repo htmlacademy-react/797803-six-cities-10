@@ -1,5 +1,7 @@
 import CitiesCardList from '../cities-card-list/cities-card-list';
+import Map from '../map/map';
 import {Offer} from '../../types/offer';
+import {MAP_CITY} from '../../const';
 
 type MainPlacesProps = {
     offers: Offer[];
@@ -42,7 +44,9 @@ function MainPlaces ({offers, offersCount}: MainPlacesProps): JSX.Element {
         <CitiesCardList offers = {offers}/>
       </section>
       <div className="cities__right-section">
-        <section className="cities__map map" />
+        <section className="cities__map map">
+          <Map city = {MAP_CITY.Amsterdam} offers = {offers}/>
+        </section>
       </div>
     </div>
   );

@@ -25,6 +25,17 @@ export const CITIES = [
   'Dusseldorf',
 ];
 
+export const MAP_CITY = {
+  Amsterdam: {
+    'location': {
+      'latitude': 52.370216,
+      'longitude': 4.895168,
+      'zoom': 10,
+    },
+    'name': 'Amsterdam',
+  },
+};
+
 export const REVIEW_FORM_STATUS = [
   {
     startNumber: 5,
@@ -48,6 +59,9 @@ export const REVIEW_FORM_STATUS = [
   },
 ];
 
+export const URL_MARKER_DEFAULT =
+  'https://assets.htmlacademy.ru/content/intensive/javascript-1/demo/interactive-map/pin.svg';
+
 export const OFFERS_COUNT = 312;
 
 export const PLACE_CARDS_COUNT = 4;
@@ -55,3 +69,4 @@ export const PLACE_CARDS_COUNT = 4;
 export const RATING_WIDTH_FACTOR = 14.8;
 
 export const START_PLACE_CARD_ID = 0;
+
