@@ -14,6 +14,7 @@ export enum AuthorizationStatus {
 export enum PlaceCardClass {
   Cities = 'cities',
   Favorites = 'favorites',
+  NearPlaces = 'near-places',
 }
 
 export const CITIES = [
