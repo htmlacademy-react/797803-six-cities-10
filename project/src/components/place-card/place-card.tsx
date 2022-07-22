@@ -1,4 +1,4 @@
-import {RATING_WIDTH_FACTOR, PlaceCardClass} from '../../const';
+import {RATING_WIDTH_FILM_FACTOR, PlaceCardClass} from '../../const';
 import {Offer} from '../../types/offer';
 import {Link} from 'react-router-dom';
 
@@ -8,17 +8,28 @@ type PlaceCardProps = {
   onMouseEnterPlaceCard?: (id: number) => void;
 }
 
+const getComponentClassName = (type: PlaceCardClass) => {
+  switch (type) {
+    case PlaceCardClass.Cities:
+      return 'cities';
+    case PlaceCardClass.Favorites:
+      return 'favorites';
+    case PlaceCardClass.NearPlaces:
+      return 'near-places';
+  }
+};
+
 function PlaceCard ({classComponent, offer, onMouseEnterPlaceCard}:PlaceCardProps): JSX.Element {
 
   const {id, isPremium, previewImage, price, rating, title, type} = offer;
   const placeCardId = `/offer/:${id}`;
 
   return (
-    <article className={`${classComponent}__card place-card`}
+    <article className={`${getComponentClassName(classComponent)}__card place-card`}
       onMouseEnter = {onMouseEnterPlaceCard ? () => onMouseEnterPlaceCard(id) : undefined}
     >
       {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
-      <div className={`${classComponent}__image-wrapper place-card__image-wrapper`}>
+      <div className={`${getComponentClassName(classComponent)}__image-wrapper place-card__image-wrapper`}>
         <a href="/">
           <img
             className="place-card__image"
@@ -51,7 +62,7 @@ function PlaceCard ({classComponent, offer, onMouseEnterPlaceCard}:PlaceCardProp
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: rating * RATING_WIDTH_FACTOR}} />
+            <span style={{width: rating * RATING_WIDTH_FILM_FACTOR}} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
